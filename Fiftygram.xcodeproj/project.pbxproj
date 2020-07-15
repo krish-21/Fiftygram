@@ -14,6 +14,7 @@
 		6BBA27A224BDBD180034C1F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA27A124BDBD180034C1F5 /* Preview Assets.xcassets */; };
 		6BBA27A524BDBD180034C1F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA27A324BDBD180034C1F5 /* LaunchScreen.storyboard */; };
 		6BBA281124BF48FC0034C1F5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA281024BF48FC0034C1F5 /* ImagePicker.swift */; };
+		6BBA281524BF6D8A0034C1F5 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA281424BF6D8A0034C1F5 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6BBA27A424BDBD180034C1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BBA27A624BDBD180034C1F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBA281024BF48FC0034C1F5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		6BBA281424BF6D8A0034C1F5 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,10 @@
 		6BBA279724BDBD100034C1F5 /* Fiftygram */ = {
 			isa = PBXGroup;
 			children = (
+				6BBA281724BF6DDE0034C1F5 /* Helpers */,
+				6BBA281624BF6DCE0034C1F5 /* Views */,
 				6BBA279824BDBD100034C1F5 /* AppDelegate.swift */,
 				6BBA279A24BDBD100034C1F5 /* SceneDelegate.swift */,
-				6BBA279C24BDBD100034C1F5 /* ContentView.swift */,
-				6BBA281024BF48FC0034C1F5 /* ImagePicker.swift */,
 				6BBA279E24BDBD180034C1F5 /* Assets.xcassets */,
 				6BBA27A324BDBD180034C1F5 /* LaunchScreen.storyboard */,
 				6BBA27A624BDBD180034C1F5 /* Info.plist */,
@@ -76,6 +78,23 @@
 				6BBA27A124BDBD180034C1F5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6BBA281624BF6DCE0034C1F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BBA279C24BDBD100034C1F5 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6BBA281724BF6DDE0034C1F5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6BBA281424BF6D8A0034C1F5 /* ImageSaver.swift */,
+				6BBA281024BF48FC0034C1F5 /* ImagePicker.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +170,7 @@
 			files = (
 				6BBA279924BDBD100034C1F5 /* AppDelegate.swift in Sources */,
 				6BBA281124BF48FC0034C1F5 /* ImagePicker.swift in Sources */,
+				6BBA281524BF6D8A0034C1F5 /* ImageSaver.swift in Sources */,
 				6BBA279B24BDBD100034C1F5 /* SceneDelegate.swift in Sources */,
 				6BBA279D24BDBD100034C1F5 /* ContentView.swift in Sources */,
 			);
@@ -290,6 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fiftygram/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YN44S2535;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fiftygram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fiftygram/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YN44S2535;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fiftygram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

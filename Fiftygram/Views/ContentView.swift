@@ -22,6 +22,11 @@ struct ContentView: View {
     //         to load Image in loadImage()
     @State private var inputImage: UIImage?
     
+    // UIImage to save into the PhotoAlbum
+    @State private var filteredUIImage: UIImage?
+    
+    @State private var imageSaved: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -58,7 +63,14 @@ struct ContentView: View {
                 Button(action: {
                     self.applyCustom()
                 }) {
-                    CustomButtonText(buttonText: "Pixellate", buttonColor: Color.black)
+                    CustomButtonText(buttonText: "Pixellate", buttonColor: Color.gray)
+                }
+                
+                // Save Photo
+                Button(action: {
+                    self.saveImage()
+                }) {
+                    CustomButtonText(buttonText: "Save Photo", buttonColor: Color.yellow)
                 }
             }
             .navigationBarTitle("Fiftygram")
@@ -68,6 +80,9 @@ struct ContentView: View {
                     self.showingImagePicker = true
                 }
             )
+            .alert(isPresented: $imageSaved) {
+                Alert(title: Text("Important"), message: Text("The filtered image has been saved to Photos"), dismissButton: .default(Text("Ok")))
+            }
         }
         // a view stacker on top of the current view, pop-up-ish
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -109,11 +124,10 @@ struct ContentView: View {
         if let cgImage = context.createCGImage(filteredImage, from: filteredImage.extent) {
             print("cgImage fine")
             // convert the CGImage to a UIImage
-            let uiImage = UIImage(cgImage: cgImage)
+            filteredUIImage = UIImage(cgImage: cgImage)
             // diplay the UIImage
-            image = Image(uiImage: uiImage)
+            image = Image(uiImage: filteredUIImage!)
         }
-        
         print("cgImage problem")
     }
     
@@ -157,10 +171,19 @@ struct ContentView: View {
 
         let currentFilter = CIFilter.pixellate()
         
-        currentFilter.scale = 50  // pixellating scale
+        currentFilter.scale = 25  // pixellating scale
         currentFilter.inputImage = startImage
         
         applyFilter(filter: currentFilter)
+    }
+    
+    // save Image to Photo Album
+    func saveImage() {
+        let imageSaver = ImageSaver()
+        if let uiImage = filteredUIImage {
+            imageSaver.writeToPhotoAlbum(image: uiImage)
+            imageSaved = true
+        }
     }
 }
 
@@ -178,6 +201,8 @@ struct CustomButtonText: View {
             .foregroundColor(.white)
             .background(buttonColor)
             .cornerRadius(36)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 3)
     }
 }
 
