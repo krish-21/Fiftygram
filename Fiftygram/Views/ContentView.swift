@@ -25,6 +25,7 @@ struct ContentView: View {
     // UIImage to save into the PhotoAlbum
     @State private var filteredUIImage: UIImage?
     
+    // Bool to alert user when image is saved
     @State private var imageSaved: Bool = false
     
     var body: some View {
@@ -80,6 +81,7 @@ struct ContentView: View {
                     self.showingImagePicker = true
                 }
             )
+            // alert the user after image is saved
             .alert(isPresented: $imageSaved) {
                 Alert(title: Text("Important"), message: Text("The filtered image has been saved to Photos"), dismissButton: .default(Text("Ok")))
             }
