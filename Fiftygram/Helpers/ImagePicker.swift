@@ -3,7 +3,7 @@
 //  Fiftygram
 //
 //  Created by Krishna Nanduri on 15/07/20.
-//  Copyright © 2020 Krishna Nanduri. All rights reserved.
+//  ImagePicker absent in SwiftUI: https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
 //
 
 import SwiftUI
